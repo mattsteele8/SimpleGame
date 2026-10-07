@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Minesweeper</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="label">Flags:</span>
+                    <span class="value" id="flagCount">0</span> / <span id="mineCount">10</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Time:</span>
+                    <span class="value" id="timer">0</span>s
+                </div>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard"></div>
+
+        <div class="controls">
+            <button class="btn btn-primary" id="newGameBtn">New Game</button>
+            <div class="difficulty-selector">
+                <button class="difficulty-btn active" data-difficulty="easy">Easy (8x8, 10 mines)</button>
+                <button class="difficulty-btn" data-difficulty="medium">Medium (12x12, 30 mines)</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard (16x16, 99 mines)</button>
+            </div>
+        </div>
+
+        <div class="modal" id="gameModal">
+            <div class="modal-content">
+                <h2 id="modalTitle">Game Over!</h2>
+                <p id="modalMessage">You lose! Better luck next time.</p>
+                <button class="btn btn-primary" id="modalBtn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
