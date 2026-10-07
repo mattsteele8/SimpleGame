@@ -61,7 +61,12 @@ class Minesweeper {
 
     renderBoard() {
         const boardEl = document.getElementById('gameBoard');
-        boardEl.style.gridTemplateColumns = `repeat(${this.cols}, 40px)`;
+
+        let cellSize = 40;
+        if (this.currentDifficulty === 'medium') cellSize = 30;
+        if (this.currentDifficulty === 'hard') cellSize = 20;
+
+        boardEl.style.gridTemplateColumns = `repeat(${this.cols}, ${cellSize}px)`;
         boardEl.innerHTML = '';
 
         for (let i = 0; i < this.rows * this.cols; i++) {
